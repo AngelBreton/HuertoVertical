@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="295dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Bienvenido"
+        android:textColor="#0d6e6a"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Crear una cuenta"
+        android:textColor="#0d6e6a"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/botonverde"
+        android:onClick="onClick"
+        android:text="login"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/registro_btn"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/botonverde"
+        android:onClick="onClick"
+        android:text="Registrar"
+        android:textColor="#fff"
+        android:textStyle="bold" />
+</LinearLayout>

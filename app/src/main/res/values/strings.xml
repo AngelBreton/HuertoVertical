@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HuertoVertical</string>
+
+    <string name="entrar">entrar</string>
+    <string name="registro">registrar</string>
+    <string name="login">login</string>
+</resources>

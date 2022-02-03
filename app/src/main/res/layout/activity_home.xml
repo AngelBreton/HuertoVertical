@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    tools:context=".Home">
+
+    <Button
+        android:id="@+id/nuevaCosecha_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nueva Cosecha"
+        android:background="@drawable/botonverde"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/monitorea_btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:text="Monitorear Nivel 1"
+        android:textStyle="bold"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/monitorea_btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:text="Monitorear Nivel 2"
+        android:textStyle="bold"
+        android:layout_marginTop="260dp"/>
+
+    <Button
+        android:id="@+id/monitorea_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:text="Monitorear Nivel 3"
+        android:textStyle="bold"
+        android:layout_marginTop="320dp"/>
+
+    <Button
+        android:id="@+id/monitorea_btn4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:text="Monitorear Nivel 4"
+        android:textStyle="bold"
+        android:layout_marginTop="380dp"/>
+</RelativeLayout>

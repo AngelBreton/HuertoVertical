@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECF0F1"
+    tools:context=".Monitoreo1">
+
+    <TextView
+        android:id="@+id/letrero_nivel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/forget"
+        android:gravity="center"
+        android:text="Nivel 1"
+        android:textSize="50dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/letreroConductividad_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:gravity="center"
+        android:text="Conductividad"
+        android:textStyle="bold"
+        android:layout_marginTop="130dp"/>
+
+    <TextView
+        android:id="@+id/valorConductividad_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forget"
+        android:gravity="center"
+        android:text="Valor Conductividad"
+        android:textStyle="bold"
+        android:layout_marginTop="190dp"/>
+
+    <TextView
+        android:id="@+id/letreroPh_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:gravity="center"
+        android:text="PH"
+        android:textStyle="bold"
+        android:layout_marginTop="250dp"/>
+
+    <TextView
+        android:id="@+id/valorPh_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forget"
+        android:gravity="center"
+        android:text="Valor PH"
+        android:textStyle="bold"
+        android:layout_marginTop="310dp" />
+
+    <TextView
+        android:id="@+id/letreroTemperatura_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botonverde"
+        android:gravity="center"
+        android:text="Temperatura"
+        android:textStyle="bold"
+        android:layout_marginTop="370dp" />
+
+    <TextView
+        android:id="@+id/valorTemperatura_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/forget"
+        android:gravity="center"
+        android:text="ValorTemperatura"
+        android:textStyle="bold"
+        android:layout_marginTop="430dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="490dp"
+        android:background="@drawable/forget"
+        android:text="Regresar"
+        android:textStyle="bold" />
+
+</RelativeLayout>
