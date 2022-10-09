@@ -24,10 +24,11 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/temperatura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Crear una cuenta"
+        android:text=""
         android:textColor="#0d6e6a"
         android:textStyle="bold" />
 

@@ -21,6 +21,7 @@
         android:letterSpacing="0.03"/>
 
     <EditText
+        android:id="@+id/correo"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -32,6 +33,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/contraseña"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -43,6 +45,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/confirmaContraseña"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
@@ -54,6 +57,7 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/btn_register"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="25dp"

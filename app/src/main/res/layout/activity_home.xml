@@ -51,4 +51,5 @@
         android:text="Monitorear Nivel 4"
         android:textStyle="bold"
         android:layout_marginTop="380dp"/>
+
 </RelativeLayout>

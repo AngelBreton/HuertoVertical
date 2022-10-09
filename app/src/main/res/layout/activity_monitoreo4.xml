@@ -30,7 +30,7 @@
         android:layout_marginTop="130dp"/>
 
     <TextView
-        android:id="@+id/valorConductividad_id"
+        android:id="@+id/cond4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
@@ -50,7 +50,7 @@
         android:layout_marginTop="250dp"/>
 
     <TextView
-        android:id="@+id/valorPh_id"
+        android:id="@+id/ph4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
@@ -70,7 +70,7 @@
         android:layout_marginTop="370dp" />
 
     <TextView
-        android:id="@+id/valorTemperatura_id"
+        android:id="@+id/temp4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"

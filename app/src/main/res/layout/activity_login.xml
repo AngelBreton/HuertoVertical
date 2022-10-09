@@ -25,6 +25,7 @@
         android:letterSpacing="0.03"/>
 
     <EditText
+        android:id="@+id/correoLogin"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="30dp"
@@ -36,6 +37,7 @@
         android:textStyle="bold" />
 
     <EditText
+        android:id="@+id/contraseñaLogin"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="20dp"

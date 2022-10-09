@@ -27,17 +27,19 @@
         android:gravity="center"
         android:text="Conductividad"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="130dp"/>
 
     <TextView
-        android:id="@+id/valorConductividad_id"
+        android:id="@+id/cond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
         android:background="@drawable/forget"
         android:gravity="center"
-        android:text="Valor Conductividad"
-        android:textStyle="bold"
-        android:layout_marginTop="190dp"/>
+        android:text=""
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/letreroPh_id"
@@ -47,17 +49,19 @@
         android:gravity="center"
         android:text="PH"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="250dp"/>
 
     <TextView
-        android:id="@+id/valorPh_id"
+        android:id="@+id/ph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
         android:background="@drawable/forget"
         android:gravity="center"
         android:text="Valor PH"
-        android:textStyle="bold"
-        android:layout_marginTop="310dp" />
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/letreroTemperatura_id"
@@ -67,16 +71,18 @@
         android:gravity="center"
         android:text="Temperatura"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="370dp" />
 
     <TextView
-        android:id="@+id/valorTemperatura_id"
+        android:id="@+id/temp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/forget"
         android:gravity="center"
-        android:text="ValorTemperatura"
+        android:text="Valor Temperatura"
         android:textStyle="bold"
+        android:textSize="20dp"
         android:layout_marginTop="430dp" />
 
     <Button
@@ -86,6 +92,15 @@
         android:layout_marginTop="490dp"
         android:background="@drawable/forget"
         android:text="Regresar"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="570dp"
+        android:background="@drawable/forget"
+        android:text="Enviar Correo"
         android:textStyle="bold" />
 
 </RelativeLayout>

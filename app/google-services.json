@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "1045603218436",
-    "project_id": "huertovertical-66999",
-    "storage_bucket": "huertovertical-66999.appspot.com"
+    "project_number": "2578615972",
+    "project_id": "prueba2-20d1c",
+    "storage_bucket": "prueba2-20d1c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1045603218436:android:f40c78befc033fdd95b151",
+        "mobilesdk_app_id": "1:2578615972:android:9652520ebff618b5f56031",
         "android_client_info": {
           "package_name": "com.example.huertovertical"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1045603218436-huk74du30hai6e5e1ok7i6go7jgn23sk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.huertovertical",
-            "certificate_hash": "77d58f61c6dc67c937c2589c30b487620c4fda77"
-          }
-        },
-        {
-          "client_id": "1045603218436-v2i7v52jbnboink42u8726onluqbr7sf.apps.googleusercontent.com",
+          "client_id": "2578615972-c9i2bmdo2na103t880gc689qc18m7o1b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC9A0HyJvSzLtR3n3jTPRUMn7qdytEZpIk"
+          "current_key": "AIzaSyBGT6Jw27sFb-XvTxemNpTyTz4aN_zp7Fk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1045603218436-v2i7v52jbnboink42u8726onluqbr7sf.apps.googleusercontent.com",
+              "client_id": "2578615972-c9i2bmdo2na103t880gc689qc18m7o1b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
