@@ -35,13 +35,28 @@
         android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="235dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@drawable/ic_arrow"
         android:gravity="center_vertical"
-        android:hint="Selecciona Hortaliza"
+        android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
         android:layout_marginTop="140dp"/>
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:hint="Fecha Inicio" />
+
+
+
     <TextView
         android:id="@+id/numeroNivel2"
         android:layout_width="match_parent"
@@ -57,13 +72,27 @@
         android:id="@+id/text_view2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="235dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@drawable/ic_arrow"
         android:gravity="center_vertical"
-        android:hint="Selecciona Hortaliza"
+        android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
         android:layout_marginTop="260dp"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="260dp"
+        android:ems="10"
+        android:hint="Fecha Inicio" />
+
+
     <TextView
         android:id="@+id/numeroNivel3"
         android:layout_width="match_parent"
@@ -79,18 +108,31 @@
         android:id="@+id/text_view3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="235dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@drawable/ic_arrow"
         android:gravity="center_vertical"
-        android:hint="Selecciona Hortaliza"
+        android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
         android:layout_marginTop="380dp"/>
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="380dp"
+        android:ems="10"
+        android:hint="Fecha Inicio" />
 
     <TextView
         android:id="@+id/numeroNivel4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:gravity="center_vertical"
         android:background="@drawable/botonverde"
         android:text="Nivel 4"
@@ -102,12 +144,33 @@
         android:id="@+id/text_view4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="235dp"
         android:background="@android:drawable/editbox_background"
         android:drawableEnd="@drawable/ic_arrow"
         android:gravity="center_vertical"
-        android:hint="Selecciona Hortaliza"
+        android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
         android:layout_marginTop="500dp"/>
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="500dp"
+        android:ems="10"
+        android:hint="Fecha Inicio" />
+
+    <Button
+        android:id="@+id/guardarCosecha_btn"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="560dp"
+        android:background="@drawable/botonverde"
+        android:text="Guardar"
+        />
 
 </RelativeLayout>

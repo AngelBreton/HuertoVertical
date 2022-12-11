@@ -7,23 +7,29 @@
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/botonnopulsado.xml" value="0.2203125" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/botonpulsado.xml" value="0.2203125" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/botonverde.xml" value="0.19375" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/custom_progress_bg.xml" value="0.1065" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/forget.xml" value="0.1" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/ic_arrow.xml" value="0.1" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/texto_sensores.xml" value="0.14" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/drawable/valor_sensores.xml" value="0.12239583333333333" />
-        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_main.xml" value="0.15" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo.xml" value="0.10885416666666667" />
-        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo1.xml" value="0.2" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo1.xml" value="0.25" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo2.xml" value="0.16" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo3.xml" value="0.1390625" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_monitoreo4.xml" value="0.13924050632911392" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_register.xml" value="0.22" />
-        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_seleccion_plantas.xml" value="0.13253012048192772" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/activity_seleccion_plantas.xml" value="0.1" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/datos.xml" value="0.22" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/dialog_searchable_spinner.xml" value="0.13253012048192772" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/fecha.xml" value="0.1" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/hortaliza.xml" value="0.1" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/login.xml" value="0.1" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/prueba.xml" value="0.25" />
+        <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/prueba2.xml" value="0.1" />
         <entry key="..\:/Users/Angel_Breton/AndroidStudioProjects/HuertoVertical/app/src/main/res/layout/register.xml" value="0.33" />
       </map>
     </option>

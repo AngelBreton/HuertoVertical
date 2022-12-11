@@ -38,6 +38,7 @@ public class login extends Activity {
         passwordLog = findViewById(R.id.contraseñaLogin);
         BtnLogin2 = (Button) findViewById(R.id.login_btn2);
 
+        String saludo = "hola";
         BtnLogin2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
