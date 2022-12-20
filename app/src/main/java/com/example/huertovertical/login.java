@@ -17,14 +17,26 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 public class login extends Activity {
+    //obtiene fecha Actual
+    private int diaActual, mesActual, añoActual;
+    String diaA,mesA,añoA;
+
     Button BtnLogin2;
     EditText emailLog, passwordLog;
 
     FirebaseFirestore mFirestore;
     FirebaseAuth mAuth;
+
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mDatabaseReference = mDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +50,25 @@ public class login extends Activity {
         passwordLog = findViewById(R.id.contraseñaLogin);
         BtnLogin2 = (Button) findViewById(R.id.login_btn2);
 
+        //obtiene Zona Horaria
+        TimeZone tz = TimeZone.getTimeZone("America/Mexico_City");
+
+        Calendar fechaActual=Calendar.getInstance(tz);
+        diaActual=fechaActual.get(Calendar.DAY_OF_MONTH);
+        mesActual=fechaActual.get(Calendar.MONTH)+1;
+        añoActual=fechaActual.get(Calendar.YEAR);
+
+        diaA= String.valueOf(diaActual);
+        mesA= String.valueOf(mesActual);
+        añoA= String.valueOf(añoActual);
+
         BtnLogin2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String emailUser = emailLog.getText().toString().trim();
                 String passUser = passwordLog.getText().toString().trim();
+
+
 
                 if(emailUser.isEmpty() || passUser.isEmpty()){
                     Toast.makeText(login.this,"Completa los datos por favor",Toast.LENGTH_SHORT).show();
@@ -50,6 +76,11 @@ public class login extends Activity {
                     loginUser(emailUser,passUser);
 
                 }
+
+                mDatabaseReference = mDatabase.getReference().child("FECHAACTUAL");
+                mDatabaseReference.setValue(diaA+mesA+añoA);
+          ;
+
 //                Intent i = new Intent(login.this, Home.class);
 //                startActivity(i);
             }

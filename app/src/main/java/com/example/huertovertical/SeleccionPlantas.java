@@ -1,5 +1,9 @@
 package com.example.huertovertical;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
@@ -7,17 +11,29 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-public class SeleccionPlantas extends AppCompatActivity {
+import java.util.ArrayList;
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class SeleccionPlantas extends AppCompatActivity{
+    //
+    private int diaActual, mesActual, añoActual;
+    String diaA,mesA,añoA;
+
     //inicializa variable arrastrable1
     TextView textView;  // nivel 1
     TextView textView2; // nivel 2
@@ -26,10 +42,52 @@ public class SeleccionPlantas extends AppCompatActivity {
     ArrayList<String> arrayList;
     Dialog dialog;
 
+    //Inicializa Variables fechas
+    DatePickerDialog picker;
+    EditText eText;
+    DatePickerDialog picker2;
+    EditText eText2;
+    DatePickerDialog picker3;
+    EditText eText3;
+    DatePickerDialog picker4;
+    EditText eText4;
+
+    //Boton Guardar
+    Button BtnGuardarCosecha;
+
+    //Objetos Fecha
+    public Fecha fecha1;
+    public Fecha fecha2;
+    public Fecha fecha3;
+    public Fecha fecha4;
+
+    String f1;
+    String f2;
+    String f3;
+    String f4;
+
+    //Instancia Firebase
+    private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference mDatabaseReference = mDatabase.getReference();
+    //public DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_plantas);
+
+        BtnGuardarCosecha = (Button) findViewById(R.id.guardarCosecha_btn);
+
+
+        //asigna variable fecha
+        eText=(EditText) findViewById(R.id.editText1);
+        eText.setInputType(InputType.TYPE_NULL);
+        eText2=(EditText) findViewById(R.id.editText2);
+        eText2.setInputType(InputType.TYPE_NULL);
+        eText3=(EditText) findViewById(R.id.editText3);
+        eText3.setInputType(InputType.TYPE_NULL);
+        eText4=(EditText) findViewById(R.id.editText4);
+        eText4.setInputType(InputType.TYPE_NULL);
 
         //asignar variable
         textView = findViewById(R.id.text_view);    //nivel 1
@@ -57,6 +115,17 @@ public class SeleccionPlantas extends AppCompatActivity {
         arrayList.add("Espinaca ");
         arrayList.add("Chile de árbol ");
         arrayList.add("Lechuga ");
+
+
+        Calendar fechaActual=Calendar.getInstance();
+        diaActual=fechaActual.get(Calendar.DAY_OF_MONTH);
+        mesActual=fechaActual.get(Calendar.MONTH);
+        añoActual=fechaActual.get(Calendar.YEAR);
+
+        diaA= String.valueOf(diaActual);
+        mesA= String.valueOf(mesActual);
+        añoA= String.valueOf(añoActual);
+
 
         //Inicia evento click en el spinner 1
         textView.setOnClickListener(new View.OnClickListener() {
@@ -272,11 +341,195 @@ public class SeleccionPlantas extends AppCompatActivity {
                 });
             }
         }); //finaliza metodo spinner 4
+
+        //Inicia metodo Obtener Fecha1
+        eText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Fecha fecha1;
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+
+                // date picker dialog
+                picker = new DatePickerDialog(SeleccionPlantas.this, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                f1=eText.getText().toString();
+
+                            }
+                        }, year, month, day);
+
+                picker.show();
+            }
+        });
+
+        //Inicia metodo Obtener Fecha2
+        eText2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                fecha2= new Fecha(year, month,day);
+                // date picker dialog
+                picker2 = new DatePickerDialog(SeleccionPlantas.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eText2.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                f2=eText2.getText().toString();
+                            }
+                        }, year, month, day);
+                picker2.show();
+            }
+        });
+
+        //Inicia metodo Obtener Fecha3
+        eText3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                fecha3= new Fecha(year, month,day);
+                // date picker dialog
+                picker3 = new DatePickerDialog(SeleccionPlantas.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eText3.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                f3=eText3.getText().toString();
+                            }
+                        }, year, month, day);
+                picker3.show();
+            }
+        });
+
+
+        //Inicia metodo Obtener Fecha4
+        eText4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                fecha4= new Fecha(year, month,day);
+                // date picker dialog
+                picker4 = new DatePickerDialog(SeleccionPlantas.this, new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eText4.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                f4=eText4.getText().toString();
+                            }
+                        }, year, month, day);
+                picker4.show();
+            }
+        });
+
+
+        BtnGuardarCosecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //guardarCosecha_btn(new Intent(getApplication(),MyService.class));
+
+                TextView text = (TextView)findViewById(R.id.letrero);
+
+                String date1 = f1;
+                String date2 = f2;
+                String date3 = f3;
+                String date4 = f4;
+
+                //text.setText(date1+date2+date3+date4);
+
+                String[] fechaDividida = date1.split("/");
+                String[] fechaDividida2 = date2.split("/");
+                String[] fechaDividida3 = date3.split("/");
+                String[] fechaDividida4 = date4.split("/");
+
+              //  text.setText(fechaDividida[0]+fechaDividida[1]+fechaDividida[2]);
+                text.setText(diaA+mesA+añoA);
+
+
+//                System.out.println(fechaDividida[0]); //21
+//                System.out.println(fechaDividida[1]); //10
+//                System.out.println(fechaDividida[2]); //2016
+
+                mDatabaseReference = mDatabase.getReference().child("FECHASACTUAL");
+                mDatabaseReference.setValue(diaA+mesA+añoA);
+
+                mDatabaseReference = mDatabase.getReference().child("FECHA1");
+                mDatabaseReference.setValue(fechaDividida[0]+fechaDividida[1]+fechaDividida[2]);
+
+                mDatabaseReference = mDatabase.getReference().child("FECHAS2");
+                mDatabaseReference.setValue(fechaDividida2[0]+fechaDividida2[1]+fechaDividida2[2]);
+
+                mDatabaseReference = mDatabase.getReference().child("FECHAS3");
+                mDatabaseReference.setValue(fechaDividida3[0]+fechaDividida3[1]+fechaDividida3[2]);
+
+                mDatabaseReference = mDatabase.getReference().child("FECHAS4");
+                mDatabaseReference.setValue(fechaDividida4[0]+fechaDividida4[1]+fechaDividida4[2]);
+
+
+
+                //esta si
+               // mDatabase = FirebaseDatabase.getInstance().getReference();
+
+                //esta tambien
+                //guardarCosecha("001","02","03");
+               // guardarCosecha(fechaDividida[0],fechaDividida[1],fechaDividida[2]);
+
+//                guardarCosecha2(fecha2.getAño(),fecha2.getMes(),fecha2.getDia());
+//                guardarCosecha3(fecha3.getAño(),fecha3.getMes(),fecha3.getDia());
+//                guardarCosecha4(fecha4.getAño(),fecha4.getMes(),fecha4.getDia());
+
+
+                    //descomentar para cambiar de pagina
+                Intent i = new Intent(SeleccionPlantas.this, Home.class);
+                startActivity(i);
+
+
+
+            }
+        });
+
+
+
     }
+
 
     //metodo boton anterior
     public void Anterior(View View){
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
+    }
+
+    public void guardarCosecha(String año, String mes, String dia) {
+        Fecha fecha = new Fecha(año, mes, dia);
+      //  mDatabase.child("fecha1").setValue(fecha);
+
+    }
+
+
+    public void guardarCosecha2(String año, String mes, String dia) {
+        Fecha fecha = new Fecha(año, mes, dia);
+       // mDatabase.child("fecha2").setValue(fecha);
+    }
+
+    public void guardarCosecha3(String año, String mes, String dia) {
+        Fecha fecha = new Fecha(año, mes, dia);
+        //mDatabase.child("fecha3").setValue(fecha);
+    }
+
+    public void guardarCosecha4(String año, String mes, String dia) {
+        Fecha fecha = new Fecha(año, mes, dia);
+       // mDatabase.child("fecha4").setValue(fecha);
+
     }
 }

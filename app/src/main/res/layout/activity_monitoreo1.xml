@@ -16,8 +16,8 @@
         android:background="@drawable/forget"
         android:gravity="center"
         android:text="Nivel 1"
-        android:textSize="50dp"
-        android:textStyle="bold"/>
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/letreroConductividad_id"
@@ -28,13 +28,15 @@
         android:text="Conductividad"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="130dp"/>
+        android:layout_marginTop="70dp"/>
+
+
 
     <TextView
         android:id="@+id/cond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="190dp"
+        android:layout_marginTop="120dp"
         android:background="@drawable/forget"
         android:gravity="center"
         android:text=""
@@ -50,13 +52,13 @@
         android:text="PH"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="250dp"/>
+        android:layout_marginTop="170dp"/>
 
     <TextView
         android:id="@+id/ph"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="220dp"
         android:background="@drawable/forget"
         android:gravity="center"
         android:text="Valor PH"
@@ -72,7 +74,7 @@
         android:text="Temperatura"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="370dp" />
+        android:layout_marginTop="270dp" />
 
     <TextView
         android:id="@+id/temp"
@@ -83,13 +85,13 @@
         android:text="Valor Temperatura"
         android:textStyle="bold"
         android:textSize="20dp"
-        android:layout_marginTop="430dp" />
+        android:layout_marginTop="320dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="490dp"
+        android:layout_marginTop="370dp"
         android:background="@drawable/forget"
         android:text="Regresar"
         android:textStyle="bold" />
@@ -98,9 +100,27 @@
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="570dp"
+        android:layout_marginTop="420dp"
         android:background="@drawable/forget"
         android:text="Enviar Correo"
         android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="470dp" />
+
+    <Button
+        android:id="@+id/startProgress"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="520dp"
+        android:background="@drawable/forget"
+        android:text="Actualizar"
+        android:textStyle="bold" />
+    
+
 
 </RelativeLayout>

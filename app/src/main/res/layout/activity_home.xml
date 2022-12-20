@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ECF0F1"
@@ -11,45 +12,393 @@
     <Button
         android:id="@+id/nuevaCosecha_btn"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/botonverde"
         android:text="Nueva Cosecha"
-        android:background="@drawable/botonverde"
-        android:layout_marginTop="100dp"/>
+    />
 
+   <!-- android:layout_height="wrap_content"-->
     <Button
-        android:id="@+id/monitorea_btn1"
+        android:id="@+id/startProgress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:text="Actualizar"
+        android:textStyle="bold" />
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botonverde"
-        android:text="Monitorear Nivel 1"
-        android:textStyle="bold"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true">
 
-    <Button
-        android:id="@+id/monitorea_btn2"
+        <!-- In the above cardview widget cardelevation property will give elevation to your card view
+            card corner radius will provide radius to your card view card background color will give
+            background color to your card view card max elevation will give the cardview maximum
+            elevation card prevent corner overlap will add padding to CardView on v20 and before to
+            prevent intersections between the Card content and rounded corners. Card use compact padding
+            will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ImageVIew to display our Course Image -->
+            <ImageView
+                android:id="@+id/idIVCourseImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@mipmap/brocoli" />
+
+            <!-- Text View to display Course Name -->
+            <TextView
+                android:id="@+id/idTVCourseName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/idIVCourseImage"
+                android:text="                  Nivel 1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Text VIew to display Course Rating -->
+            <!-- Image used in present in drawable folder -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="130dp"
+                />
+
+
+            <TextView
+                android:id="@+id/idProgreso1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idTVCourseName"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@id/idIVCourseImage"
+                android:drawablePadding="2dp"
+                android:text="progreso %"
+                />
+
+            <TextView
+                android:id="@+id/LeeFecha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="75dp"
+                android:background="@drawable/forget"
+                android:gravity="center"
+                android:text="Valor PH"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/monitorea_btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="270dp"
+                android:text="Estado"
+                android:textStyle="bold"
+                ></Button>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botonverde"
-        android:text="Monitorear Nivel 2"
-        android:textStyle="bold"
-        android:layout_marginTop="260dp"/>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true">
 
-    <Button
-        android:id="@+id/monitorea_btn3"
+        <!-- In the above cardview widget cardelevation property will give elevation to your card view
+            card corner radius will provide radius to your card view card background color will give
+            background color to your card view card max elevation will give the cardview maximum
+            elevation card prevent corner overlap will add padding to CardView on v20 and before to
+            prevent intersections between the Card content and rounded corners. Card use compact padding
+            will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ImageVIew to display our Course Image -->
+            <ImageView
+                android:id="@+id/idIVCourseImage2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@mipmap/cilantro" />
+
+            <!-- Text View to display Course Name -->
+            <TextView
+                android:id="@+id/idTVCourseName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/idIVCourseImage2"
+                android:text="                 Nivel 2"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Text VIew to display Course Rating -->
+            <!-- Image used in present in drawable folder -->
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="130dp"
+                />
+
+            <TextView
+                android:id="@+id/idTVCourseRating2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idTVCourseName2"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@id/idIVCourseImage2"
+                android:drawablePadding="2dp"
+                android:text="progreso %"
+                />
+
+            <Button
+                android:id="@+id/monitorea_btn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="270dp"
+                android:text="Estado"
+                android:textStyle="bold"
+                ></Button>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botonverde"
-        android:text="Monitorear Nivel 3"
-        android:textStyle="bold"
-        android:layout_marginTop="320dp"/>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true">
 
-    <Button
-        android:id="@+id/monitorea_btn4"
+        <!-- In the above cardview widget cardelevation property will give elevation to your card view
+            card corner radius will provide radius to your card view card background color will give
+            background color to your card view card max elevation will give the cardview maximum
+            elevation card prevent corner overlap will add padding to CardView on v20 and before to
+            prevent intersections between the Card content and rounded corners. Card use compact padding
+            will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ImageVIew to display our Course Image -->
+            <ImageView
+                android:id="@+id/idIVCourseImage3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@mipmap/lechuga" />
+
+            <!-- Text View to display Course Name -->
+            <TextView
+                android:id="@+id/idTVCourseName3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/idIVCourseImage3"
+                android:text="                  Nivel 3 "
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Text VIew to display Course Rating -->
+            <!-- Image used in present in drawable folder -->
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="130dp"
+                />
+
+
+            <TextView
+                android:id="@+id/idTVCourseRating3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idTVCourseName3"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@id/idIVCourseImage3"
+                android:drawablePadding="2dp"
+                android:text="progreso %"
+                />
+
+            <Button
+                android:id="@+id/monitorea_btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="270dp"
+                android:text="Estado"
+                android:textStyle="bold"
+                ></Button>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botonverde"
-        android:text="Monitorear Nivel 4"
-        android:textStyle="bold"
-        android:layout_marginTop="380dp"/>
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="460dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="8dp"
+        card_view:cardMaxElevation="10dp"
+        card_view:cardPreventCornerOverlap="true"
+        card_view:cardUseCompatPadding="true">
+
+        <!-- In the above cardview widget cardelevation property will give elevation to your card view
+            card corner radius will provide radius to your card view card background color will give
+            background color to your card view card max elevation will give the cardview maximum
+            elevation card prevent corner overlap will add padding to CardView on v20 and before to
+            prevent intersections between the Card content and rounded corners. Card use compact padding
+            will add padding in API v21+ as well to have the same measurements with previous versions -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ImageVIew to display our Course Image -->
+            <ImageView
+                android:id="@+id/idIVCourseImage4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:padding="5dp"
+                android:src="@mipmap/lechuga" />
+
+            <!-- Text View to display Course Name -->
+            <TextView
+                android:id="@+id/idTVCourseName4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@id/idIVCourseImage4"
+                android:text="                  Nivel 4"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Text VIew to display Course Rating -->
+            <!-- Image used in present in drawable folder -->
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="130dp"
+                />
+
+
+            <TextView
+                android:id="@+id/idTVCourseRating4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idTVCourseName4"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@id/idIVCourseImage4"
+                android:drawablePadding="2dp"
+                android:text="progreso %"
+                />
+
+            <Button
+                android:id="@+id/monitorea_btn4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="270dp"
+                android:text="Estado"
+                android:textStyle="bold"
+                ></Button>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>
+
+
+

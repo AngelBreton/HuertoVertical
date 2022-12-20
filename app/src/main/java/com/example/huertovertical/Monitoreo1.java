@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
@@ -51,6 +52,10 @@ public class Monitoreo1 extends Activity {
 
     public String mEmail,mMessage,mSubject;
 
+    private int CurrentProgress = 0;
+    private ProgressBar progressBar;
+    private Button startProgress;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference referenceEntrada1 = database.getReference().child("LECTURAS");
 
@@ -65,6 +70,10 @@ public class Monitoreo1 extends Activity {
         mEmail = Utils.EMAIL;
         mMessage = Utils.MESSAGE;
         mSubject = Utils.SUBJECT;
+
+        progressBar = findViewById(R.id.progressBar);
+        startProgress = findViewById(R.id.startProgress);
+
 
         notificacion = (Button) findViewById(R.id.button4);
 //        temp.setText("Hola mundo");
@@ -105,14 +114,19 @@ public class Monitoreo1 extends Activity {
             }
         });
 
-
-
-
-
         notificacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ButtonSendEmail();
+            }
+        });
+
+        startProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CurrentProgress = CurrentProgress +10;
+                progressBar.setProgress(CurrentProgress);
+                progressBar.setMax(100);
             }
         });
     }
