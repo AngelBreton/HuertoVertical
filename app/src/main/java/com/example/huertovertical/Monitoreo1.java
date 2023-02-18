@@ -47,14 +47,13 @@ import javax.security.auth.Subject;
 
 
 public class Monitoreo1 extends Activity {
+
+
     private TextView temp,cond,ph;
-    private Button notificacion;
 
-    public String mEmail,mMessage,mSubject;
 
-    private int CurrentProgress = 0;
-    private ProgressBar progressBar;
-    private Button startProgress;
+    public String mEmail,mMessage;
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference referenceEntrada1 = database.getReference().child("LECTURAS");
@@ -69,38 +68,28 @@ public class Monitoreo1 extends Activity {
 
         mEmail = Utils.EMAIL;
         mMessage = Utils.MESSAGE;
-        mSubject = Utils.SUBJECT;
-
-        progressBar = findViewById(R.id.progressBar);
-        startProgress = findViewById(R.id.startProgress);
 
 
-        notificacion = (Button) findViewById(R.id.button4);
-//        temp.setText("Hola mundo");
 
 
         referenceEntrada1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot datasnapshot) {
-                //String estadoSensor = datasnapshot.getValue().toString();
+
                 String estadoSensor= datasnapshot.child("cond").getValue().toString();
                 String estadoSensor2= datasnapshot.child("ph").getValue().toString();
-//                    System.out.println("conductividad es "+ estadoSensor);
-//                    System.out.println("conductividad es "+ estadoSensor2);
-//                for(DataSnapshot snapshot: datasnapshot.getChildren()){
-//
-//                    String estadoSensor10 = snapshot.child("cond ").getValue().toString();
-//                    System.out.println("conductividad es "+ estadoSensor10);
-//                }
-                //                String estadoSensor2 = snapshot.child("ph").getValue().toString();
                 String estadoSensor3 = datasnapshot.child("temp").getValue().toString();
                 cond.setText(estadoSensor+"ppm");
                 ph.setText(estadoSensor2);
                 temp.setText(estadoSensor3+"°C");
 
+                //estadoSensor- cond , estadoSensor- ph,  estadoSensor -temp
                 if(Double.valueOf(estadoSensor)<200||Double.valueOf(estadoSensor2)<4||Double.valueOf(estadoSensor3)>100){
                     try{
-                        sendMail();
+                        String asunto="Nivel 1 fuera de rango";
+                        String varError = "conductividad "+ estadoSensor + " ppm, " +estadoSensor2 + " ph, " + estadoSensor3 + " °C temperatura ";
+                        sendMail(asunto,varError);
+
                     }catch (Exception e){
                         Toast.makeText(Monitoreo1.this,"Error al enviar correo",Toast.LENGTH_SHORT).show();
                     }
@@ -114,82 +103,25 @@ public class Monitoreo1 extends Activity {
             }
         });
 
-        notificacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ButtonSendEmail();
-            }
-        });
 
-        startProgress.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CurrentProgress = CurrentProgress +10;
-                progressBar.setProgress(CurrentProgress);
-                progressBar.setMax(100);
-            }
-        });
+
+
+
     }
 
-    public void sendMail(){
+    public void sendMail(String subject ,String varError){
         String mail= mEmail;
         String message = mMessage;
-        String subject = mSubject;
+
+
+
 
         //send mail
-        JavaMailAPI javaMailAPI = new JavaMailAPI(this,mail,subject,message);
+        JavaMailAPI javaMailAPI = new JavaMailAPI(this,mail,subject,message,varError);
         javaMailAPI.execute();
     }
 
-    public void ButtonSendEmail(){
-        String senderEmail = "angel.breton.1995@gmail.com";
-        String recieverEmail = "angel.breton.1995@gmail.com";
-
-        String stringPasswordSenderEmail = "ultra1A_";
-        String stringHost = "smtp.gmail.com";
-
-        Properties properties = System.getProperties();
-
-        properties.put("mail.smtp.host",stringHost);
-        properties.put("mail.smtp.port","465");
-        properties.put("mail.smtp.ssl.enable","true");
-        properties.put("mail.smtp.auth","true");
-
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(senderEmail,stringPasswordSenderEmail);
-            }
-        });
-
-        MimeMessage mimeMessage = new MimeMessage(session);
 
 
-        try{
-            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(recieverEmail));
-            mimeMessage.setSubject("Subject: Android app email");
-            mimeMessage.setText("Soy un correo mamalon \n \n hola");
-
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Transport.send(mimeMessage);
-                    } catch (MessagingException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-
-            thread.start();
-
-
-        }catch (AddressException e){
-            e.printStackTrace();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 }

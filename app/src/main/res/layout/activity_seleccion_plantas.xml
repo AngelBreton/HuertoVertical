@@ -21,17 +21,17 @@
         android:textSize="30dp"
         android:textStyle="normal"/>
 
-    <TextView
-        android:id="@+id/letrero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:background="@color/black"
-        android:backgroundTint="@color/white"
-        android:gravity="center"
-        android:hint="fechas"
-        android:textSize="20dp"
-        android:textStyle="normal" />
+<!--    <TextView-->
+<!--        android:id="@+id/letrero"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:background="@color/black"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:gravity="center"-->
+<!--        android:hint="fechas"-->
+<!--        android:textSize="20dp"-->
+<!--        android:textStyle="normal" />-->
 
 
 
@@ -44,7 +44,7 @@
         android:text="Nivel 1"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="60dp"/>
 
     <TextView
         android:id="@+id/text_view"
@@ -57,7 +57,7 @@
         android:text="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="140dp"/>
+        android:layout_marginTop="120dp"/>
 
     <EditText
         android:id="@+id/editText1"
@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="210dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="120dp"
         android:layout_marginEnd="20dp"
         android:ems="10"
         android:hint="Fecha Inicio" />
@@ -81,7 +81,7 @@
         android:text="Nivel 2"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="180dp"/>
 
     <TextView
         android:id="@+id/text_view2"
@@ -94,7 +94,7 @@
         android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="260dp"/>
+        android:layout_marginTop="240dp"/>
 
     <EditText
         android:id="@+id/editText2"
@@ -103,7 +103,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginEnd="20dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="240dp"
         android:ems="10"
         android:hint="Fecha Inicio" />
 
@@ -117,7 +117,7 @@
         android:text="Nivel 3"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="320dp"/>
+        android:layout_marginTop="300dp"/>
 
     <TextView
         android:id="@+id/text_view3"
@@ -130,7 +130,7 @@
         android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="380dp"/>
+        android:layout_marginTop="360dp"/>
 
     <EditText
         android:id="@+id/editText3"
@@ -139,7 +139,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginEnd="20dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="360dp"
         android:ems="10"
         android:hint="Fecha Inicio" />
 
@@ -153,7 +153,7 @@
         android:text="Nivel 4"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="440dp"/>
+        android:layout_marginTop="420dp"/>
 
     <TextView
         android:id="@+id/text_view4"
@@ -166,7 +166,7 @@
         android:hint="Elige Hortaliza"
         android:textStyle="bold"
         android:padding="12dp"
-        android:layout_marginTop="500dp"/>
+        android:layout_marginTop="480dp"/>
 
     <EditText
         android:id="@+id/editText4"
@@ -175,7 +175,7 @@
         android:layout_marginStart="210dp"
         android:layout_marginEnd="20dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="480dp"
         android:ems="10"
         android:hint="Fecha Inicio" />
 
@@ -183,7 +183,7 @@
         android:id="@+id/guardarCosecha_btn"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="530dp"
         android:background="@drawable/botonverde"
         android:text="Guardar"
         />

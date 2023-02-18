@@ -77,9 +77,10 @@ public class login extends Activity {
 
                 }
 
+
                 mDatabaseReference = mDatabase.getReference().child("FECHAACTUAL");
                 mDatabaseReference.setValue(diaA+mesA+añoA);
-          ;
+
 
 //                Intent i = new Intent(login.this, Home.class);
 //                startActivity(i);

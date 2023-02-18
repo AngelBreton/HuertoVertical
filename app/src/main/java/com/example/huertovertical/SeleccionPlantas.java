@@ -1,5 +1,6 @@
 package com.example.huertovertical;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -27,10 +28,11 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.text.DateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class SeleccionPlantas extends AppCompatActivity{
-    //
+
     private int diaActual, mesActual, añoActual;
     String diaA,mesA,añoA;
 
@@ -78,7 +80,6 @@ public class SeleccionPlantas extends AppCompatActivity{
 
         BtnGuardarCosecha = (Button) findViewById(R.id.guardarCosecha_btn);
 
-
         //asigna variable fecha
         eText=(EditText) findViewById(R.id.editText1);
         eText.setInputType(InputType.TYPE_NULL);
@@ -98,24 +99,26 @@ public class SeleccionPlantas extends AppCompatActivity{
         //inicializa arraylist
         arrayList = new ArrayList<>();
         //agrega valores en el array
-        arrayList.add("Fresa");
-        arrayList.add("Frambuesa ");
-        arrayList.add("Chile piquín ");
-        arrayList.add("Ajo ");
-        arrayList.add("Repollo ");
-        arrayList.add("Brócoli ");
-        arrayList.add("Acelga ");
-        arrayList.add("Apio ");
         arrayList.add("Cilantro ");
-        arrayList.add("Pimiento ");
-        arrayList.add("Perejil ");
-        arrayList.add("Habanero ");
-        arrayList.add("Tomate ");
-        arrayList.add("Cebollín ");
-        arrayList.add("Espinaca ");
-        arrayList.add("Chile de árbol ");
         arrayList.add("Lechuga ");
+        arrayList.add("Brocoli ");
+        arrayList.add("Ajo ");
+//        arrayList.add("Repollo ");
+//        arrayList.add("Brócoli ");
+//        arrayList.add("Acelga ");
+//        arrayList.add("Apio ");
+//        arrayList.add("Cilantro ");
+//        arrayList.add("Pimiento ");
+//        arrayList.add("Perejil ");
+//        arrayList.add("Habanero ");
+//        arrayList.add("Tomate ");
+//        arrayList.add("Cebollín ");
+//        arrayList.add("Espinaca ");
+//        arrayList.add("Chile de árbol ");
+//        arrayList.add("Lechuga ");
 
+        //Hortaliza seleccionada
+        final String[] hortalizas = new String[5];
 
         Calendar fechaActual=Calendar.getInstance();
         diaActual=fechaActual.get(Calendar.DAY_OF_MONTH);
@@ -174,6 +177,9 @@ public class SeleccionPlantas extends AppCompatActivity{
                   //cuando el item es seleccionado de la lista
                   //establecer item seleccionado en text view
                     textView.setText(adapter.getItem(i));
+                    //f1=eText.getText().toString();
+                    hortalizas[0] =textView.getText().toString();
+                   // indiceHortaliza1[0] =arrayList.indexOf(hortaliza1);
                   //despedir dialogo
                     dialog.dismiss();
                 }
@@ -227,6 +233,7 @@ public class SeleccionPlantas extends AppCompatActivity{
                         //cuando el item es seleccionado de la lista
                         //establecer item seleccionado en text view
                         textView2.setText(adapter.getItem(i));
+                        hortalizas[1] =textView2.getText().toString();
                         //despedir dialogo
                         dialog.dismiss();
                     }
@@ -281,6 +288,7 @@ public class SeleccionPlantas extends AppCompatActivity{
                         //cuando el item es seleccionado de la lista
                         //establecer item seleccionado en text view
                         textView3.setText(adapter.getItem(i));
+                        hortalizas[2] =textView3.getText().toString();
                         //despedir dialogo
                         dialog.dismiss();
                     }
@@ -335,6 +343,7 @@ public class SeleccionPlantas extends AppCompatActivity{
                         //cuando el item es seleccionado de la lista
                         //establecer item seleccionado en text view
                         textView4.setText(adapter.getItem(i));
+                        hortalizas[3] =textView4.getText().toString();
                         //despedir dialogo
                         dialog.dismiss();
                     }
@@ -434,32 +443,23 @@ public class SeleccionPlantas extends AppCompatActivity{
 
 
         BtnGuardarCosecha.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
 
-                //guardarCosecha_btn(new Intent(getApplication(),MyService.class));
-
-                TextView text = (TextView)findViewById(R.id.letrero);
+//                TextView text = (TextView)findViewById(R.id.letrero);
 
                 String date1 = f1;
                 String date2 = f2;
                 String date3 = f3;
                 String date4 = f4;
 
-                //text.setText(date1+date2+date3+date4);
-
                 String[] fechaDividida = date1.split("/");
                 String[] fechaDividida2 = date2.split("/");
                 String[] fechaDividida3 = date3.split("/");
                 String[] fechaDividida4 = date4.split("/");
 
-              //  text.setText(fechaDividida[0]+fechaDividida[1]+fechaDividida[2]);
-                text.setText(diaA+mesA+añoA);
-
-
-//                System.out.println(fechaDividida[0]); //21
-//                System.out.println(fechaDividida[1]); //10
-//                System.out.println(fechaDividida[2]); //2016
+//                text.setText(hortalizas[0]);
 
                 mDatabaseReference = mDatabase.getReference().child("FECHASACTUAL");
                 mDatabaseReference.setValue(diaA+mesA+añoA);
@@ -476,25 +476,21 @@ public class SeleccionPlantas extends AppCompatActivity{
                 mDatabaseReference = mDatabase.getReference().child("FECHAS4");
                 mDatabaseReference.setValue(fechaDividida4[0]+fechaDividida4[1]+fechaDividida4[2]);
 
+                mDatabaseReference = mDatabase.getReference().child("Hortaliza1");
+                mDatabaseReference.setValue(hortalizas[0]);
 
+                mDatabaseReference = mDatabase.getReference().child("Hortaliza2");
+                mDatabaseReference.setValue(hortalizas[1]);
 
-                //esta si
-               // mDatabase = FirebaseDatabase.getInstance().getReference();
+                mDatabaseReference = mDatabase.getReference().child("Hortaliza3");
+                mDatabaseReference.setValue(hortalizas[2]);
 
-                //esta tambien
-                //guardarCosecha("001","02","03");
-               // guardarCosecha(fechaDividida[0],fechaDividida[1],fechaDividida[2]);
-
-//                guardarCosecha2(fecha2.getAño(),fecha2.getMes(),fecha2.getDia());
-//                guardarCosecha3(fecha3.getAño(),fecha3.getMes(),fecha3.getDia());
-//                guardarCosecha4(fecha4.getAño(),fecha4.getMes(),fecha4.getDia());
-
+                mDatabaseReference = mDatabase.getReference().child("Hortaliza4");
+                mDatabaseReference.setValue(hortalizas[2]);
 
                     //descomentar para cambiar de pagina
                 Intent i = new Intent(SeleccionPlantas.this, Home.class);
                 startActivity(i);
-
-
 
             }
         });
@@ -510,26 +506,4 @@ public class SeleccionPlantas extends AppCompatActivity{
         startActivity(anterior);
     }
 
-    public void guardarCosecha(String año, String mes, String dia) {
-        Fecha fecha = new Fecha(año, mes, dia);
-      //  mDatabase.child("fecha1").setValue(fecha);
-
-    }
-
-
-    public void guardarCosecha2(String año, String mes, String dia) {
-        Fecha fecha = new Fecha(año, mes, dia);
-       // mDatabase.child("fecha2").setValue(fecha);
-    }
-
-    public void guardarCosecha3(String año, String mes, String dia) {
-        Fecha fecha = new Fecha(año, mes, dia);
-        //mDatabase.child("fecha3").setValue(fecha);
-    }
-
-    public void guardarCosecha4(String año, String mes, String dia) {
-        Fecha fecha = new Fecha(año, mes, dia);
-       // mDatabase.child("fecha4").setValue(fecha);
-
-    }
 }

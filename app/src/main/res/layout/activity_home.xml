@@ -12,20 +12,21 @@
     <Button
         android:id="@+id/nuevaCosecha_btn"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/botonverde"
         android:text="Nueva Cosecha"
+        android:textStyle="bold"
     />
 
    <!-- android:layout_height="wrap_content"-->
-    <Button
-        android:id="@+id/startProgress"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Actualizar"
-        android:textStyle="bold" />
+<!--    <Button-->
+<!--        android:id="@+id/startProgress"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:text="Actualizar"-->
+<!--        android:textStyle="bold" />-->
 
 
     <androidx.cardview.widget.CardView
@@ -53,7 +54,7 @@
 
             <!-- ImageVIew to display our Course Image -->
             <ImageView
-                android:id="@+id/idIVCourseImage"
+                android:id="@+id/image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -68,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/idIVCourseImage"
+                android:layout_toEndOf="@id/image"
                 android:text="                  Nivel 1"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -94,7 +95,7 @@
                 android:layout_below="@id/idTVCourseName"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_toEndOf="@id/idIVCourseImage"
+                android:layout_toEndOf="@id/image"
                 android:drawablePadding="2dp"
                 android:text="progreso %"
                 />
@@ -103,12 +104,11 @@
                 android:id="@+id/LeeFecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
-                android:background="@drawable/forget"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginEnd="165dp"
                 android:gravity="center"
-                android:text="Valor PH"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                android:hint="" />
 
             <Button
                 android:id="@+id/monitorea_btn1"
@@ -154,7 +154,7 @@
 
             <!-- ImageVIew to display our Course Image -->
             <ImageView
-                android:id="@+id/idIVCourseImage2"
+                android:id="@+id/image2"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -173,7 +173,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/idIVCourseImage2"
+                android:layout_toEndOf="@id/image2"
                 android:text="                 Nivel 2"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -192,16 +192,26 @@
                 />
 
             <TextView
-                android:id="@+id/idTVCourseRating2"
+                android:id="@+id/idProgreso2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/idTVCourseName2"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_toEndOf="@id/idIVCourseImage2"
+                android:layout_toEndOf="@id/image2"
                 android:drawablePadding="2dp"
                 android:text="progreso %"
                 />
+
+            <TextView
+                android:id="@+id/LeeFecha2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginEnd="165dp"
+                android:gravity="center"
+                android:hint="" />
 
             <Button
                 android:id="@+id/monitorea_btn2"
@@ -246,7 +256,7 @@
 
             <!-- ImageVIew to display our Course Image -->
             <ImageView
-                android:id="@+id/idIVCourseImage3"
+                android:id="@+id/image3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -261,7 +271,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/idIVCourseImage3"
+                android:layout_toEndOf="@id/image3"
                 android:text="                  Nivel 3 "
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -282,16 +292,26 @@
 
 
             <TextView
-                android:id="@+id/idTVCourseRating3"
+                android:id="@+id/idProgreso3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/idTVCourseName3"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_toEndOf="@id/idIVCourseImage3"
+                android:layout_toEndOf="@id/image3"
                 android:drawablePadding="2dp"
                 android:text="progreso %"
                 />
+
+            <TextView
+                android:id="@+id/LeeFecha3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginEnd="165dp"
+                android:gravity="center"
+                android:hint="" />
 
             <Button
                 android:id="@+id/monitorea_btn3"
@@ -335,7 +355,7 @@
 
             <!-- ImageVIew to display our Course Image -->
             <ImageView
-                android:id="@+id/idIVCourseImage4"
+                android:id="@+id/image4"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_margin="10dp"
@@ -350,7 +370,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/idIVCourseImage4"
+                android:layout_toEndOf="@id/image4"
                 android:text="                  Nivel 4"
                 android:textColor="@color/black"
                 android:textSize="18sp"
@@ -370,16 +390,26 @@
 
 
             <TextView
-                android:id="@+id/idTVCourseRating4"
+                android:id="@+id/idProgreso4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/idTVCourseName4"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="30dp"
-                android:layout_toEndOf="@id/idIVCourseImage4"
+                android:layout_toEndOf="@id/image4"
                 android:drawablePadding="2dp"
                 android:text="progreso %"
                 />
+
+            <TextView
+                android:id="@+id/LeeFecha4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="113dp"
+                android:layout_marginEnd="165dp"
+                android:gravity="center"
+                android:hint="" />
 
             <Button
                 android:id="@+id/monitorea_btn4"

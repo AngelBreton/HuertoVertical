@@ -79,12 +79,12 @@
         android:textStyle="bold"
         android:layout_marginTop="430dp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Regresar"
-        android:textStyle="bold"
-        android:layout_marginTop="490dp" />
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Regresar"-->
+<!--        android:textStyle="bold"-->
+<!--        android:layout_marginTop="490dp" />-->
 
 </RelativeLayout>

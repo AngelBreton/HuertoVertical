@@ -53,11 +53,11 @@
         android:id="@+id/ph2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="310dp"
         android:background="@drawable/forget"
         android:gravity="center"
         android:text="Valor PH"
-        android:textStyle="bold"
-        android:layout_marginTop="310dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/letreroTemperatura_id"
@@ -73,18 +73,18 @@
         android:id="@+id/temp2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="430dp"
         android:background="@drawable/forget"
         android:gravity="center"
         android:text="ValorTemperatura"
-        android:textStyle="bold"
-        android:layout_marginTop="430dp" />
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Regresar"
-        android:textStyle="bold"
-        android:layout_marginTop="490dp" />
+<!--    <Button-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="490dp"-->
+<!--        android:text="Regresar"-->
+<!--        android:textStyle="bold" />-->
 
 </RelativeLayout>

@@ -40,6 +40,10 @@
             android:name=".Prueba2"
             android:exported="false" />
         <activity
+            android:name=".Sleeper"
+            android:exported="false"
+            tools:ignore="Instantiatable" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

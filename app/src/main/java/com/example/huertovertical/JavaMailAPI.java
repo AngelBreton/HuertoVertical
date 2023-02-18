@@ -29,32 +29,45 @@ public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
     private String mEmail;
     private String mSubject;
     private String mMessage;
+    private String varError;
 
     private ProgressDialog mProgressDialog;
 
     //Constructor
-    public JavaMailAPI(Context mContext, String mEmail, String mSubject, String mMessage) {
+    public JavaMailAPI(Context mContext, String mEmail, String mSubject, String mMessage, String varError) {
         this.mContext = mContext;
         this.mEmail = mEmail;
         this.mSubject = mSubject;
         this.mMessage = mMessage;
+        this.varError = varError;
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         //Show progress dialog while sending email
-        mProgressDialog = ProgressDialog.show(mContext,"Sending message", "Please wait...",false,false);
+        //mProgressDialog = ProgressDialog.show(mContext,"Sending message", "Please wait...",false,false);
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
         //Dismiss progress dialog when message successfully send
-        mProgressDialog.dismiss();
+       // mProgressDialog.dismiss();
+
 
         //Show success toast
-        Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(mContext,"Message Sent",Toast.LENGTH_SHORT).show();
+
+        int time = 1800000;
+
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     @Override
@@ -90,29 +103,10 @@ public class JavaMailAPI extends AsyncTask<Void,Void,Void>  {
             //Adding subject
             mm.setSubject(mSubject);
             //Adding message
-            mm.setText(mMessage);
+            mm.setText(mMessage+varError);
             //Sending email
             Transport.send(mm);
 
-//            BodyPart messageBodyPart = new MimeBodyPart();
-//
-//            messageBodyPart.setText(message);
-//
-//            Multipart multipart = new MimeMultipart();
-//
-//            multipart.addBodyPart(messageBodyPart);
-//
-//            messageBodyPart = new MimeBodyPart();
-//
-//            DataSource source = new FileDataSource(filePath);
-//
-//            messageBodyPart.setDataHandler(new DataHandler(source));
-//
-//            messageBodyPart.setFileName(filePath);
-//
-//            multipart.addBodyPart(messageBodyPart);
-
-//            mm.setContent(multipart);
 
         } catch (MessagingException e) {
             e.printStackTrace();
